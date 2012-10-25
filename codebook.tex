@@ -5,6 +5,7 @@
 \usepackage{lastpage}
 \usepackage{epstopdf}
 \usepackage{fancyhdr}
+\usepackage{pdfpages}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \usepackage{titling}
 \setlength{\droptitle}{-1.2in}
@@ -1798,8 +1799,11 @@ class KMPSkipSearch {
 
 \end{verbatim}
 \section*{Common Geometric Formulas}
-\addcontentsline{toc}{subsection}{Common Geometric Formulas}
+\addcontentsline{toc}{subsection}{Common Formulas}
 \includegraphics[width=5.5in]{geometric.png}\\
 
+
+
+\includepdf[pages={-}]{cheatsheet.pdf}
 
 \end{document}
