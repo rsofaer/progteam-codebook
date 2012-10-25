@@ -7,10 +7,11 @@
 \usepackage{fancyhdr}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \usepackage{titling}
-\setlength{\droptitle}{-1.5in}
+\setlength{\droptitle}{-1.2in}
 
 \newcommand{\cTitle}{NYU ICPC Team Codebook}
 \newcommand{\cAuthor}{Compiled for the 2012 GNYR}
+\usepackage[margin=3cm]{geometry}
 \pagestyle{fancy}
 \lhead{\cAuthor}                                                 %
 \rhead{\cTitle}  %
@@ -31,16 +32,91 @@ This collaborative document is the central place for the algorithms you will nee
 
 \tableofcontents
 
-Codebook wishlist:
+%Codebook wishlist:
 
-Minimum weighted bipartite matching
-Chinese remainder theorem
-Matrix operations
-Floyd-Warshall's shortest path
+%Minimum weighted bipartite matching
+%Chinese remainder theorem
+%Matrix operations
+%Floyd-Warshall's shortest path
 
+\clearpage
 \section*{The Ritual}
 \addcontentsline{toc}{section}{The Ritual}
 
+\subsection*{When Choosing a Problem}
+
+* Find out which balloons are the popular ones!
+* Pick one with a nice, clean solution that you are totally convinced
+will work to do first.
+
+\subsection*{Before Designing Your Solution}
+
+* Highlight the important information on the problem statement - input
+bounds, special rules, formatting, etc.
+* Look for code in this notebook that you can use!
+* Convince yourself that your algorithm will run with time to spare on
+the biggest input.
+* Create several test cases that you will use, especially for special
+or boundary cases.
+
+\subsection*{Prior to Submitting}
+
+* Check maximum input, zero input, and other degenerate test cases.
+* Cross check with team mates' supplementary test cases.
+* Read the problem output specification one more time - your program's
+output behaviour is fresh in your mind.
+* Does your program work with negative numbers?
+* Make sure that your program is reading from an appropriate input file.
+* Check all variable initialisation, array bounds, and loop variables
+(i vs j, m vs n, etc.).
+* Finally, run a diff on the provided sample output and your program's output.
+* And don't forget to submit your solution under the correct problem number!
+
+\subsection*{After Submitting}
+
+* Immediately print a copy of your source.
+* Staple the solution to the problem statement and keep them safe.  Do
+not lose them!
+
+\subsection*{If It Doesn't Work...}
+
+* Remember that a run-time error can be division by zero.
+* If the solution is not complex, allow a team mate to start the
+problem afresh.
+* Don't waste a lot of time - it's not shameful to simply give up!!!
+
+\clearpage
+\section*{Skeleton File}
+\addcontentsline{toc}{section}{Skeleton File}
+\begin{verbatim}
+//COMPILING & RUNNING: javac Main.java && java Main < input.txt 
+
+import java.util.*;
+
+public class Main {
+
+    public static Scanner in;
+ 
+    public static void main(String[] args) {
+        in = new Scanner(System.in);
+
+        doStuff();
+    }
+
+    public static void doStuff() {
+        int N = in.nextInt();
+
+        for(int i = 0;i < N; i++) {
+            solve();
+        }
+    }
+
+    public static void solve() {
+
+    }
+}
+\end{verbatim}
+\clearpage
 \section*{Geometry}
 \addcontentsline{toc}{section}{Geometry}
 \addcontentsline{toc}{subsection}{Points and Polygons}
@@ -452,7 +528,7 @@ class Seg { // needs PtD (not all of it, add as needed)
     }
 
     \end{verbatim}
-\addcontentsline{toc}{subsection}{Line-Seg Distance}
+\addcontentsline{toc}{subsubsection}{Line-Seg Distance}
     \begin{verbatim}
     public static double lineToSegmentDistance(Seg line, Seg segment) {
         double q0 = line.N.dot(segment.P0) - line.c;
@@ -602,6 +678,7 @@ class HalfCircle {
     }
 }
     \end{verbatim}
+    \clearpage
     \section*{Graphs}
     \addcontentsline{toc}{section}{Graphs}
     \addcontentsline{toc}{subsection}{MaxFlow}
@@ -1416,6 +1493,7 @@ function Path (i,j)
    else
      return Path(i,intermediate) + intermediate + GetPath(intermediate,j);
 \end{verbatim}    
+\clearpage
     \section*{Other}
     \addcontentsline{toc}{section}{Other}
     \addcontentsline{toc}{subsection}{Next Permutation}
@@ -1719,36 +1797,9 @@ class KMPSkipSearch {
     }
 
 \end{verbatim}
+\section*{Common Geometric Formulas}
+\addcontentsline{toc}{subsection}{Common Geometric Formulas}
+\includegraphics[width=5.5in]{geometric.png}\\
 
-\section*{Skeleton File}
-\addcontentsline{toc}{section}{Skeleton File}
-\begin{verbatim}
-//COMPILING & RUNNING: javac Main.java && java Main < input.txt 
 
-import java.util.*;
-
-public class Main {
-
-    public static Scanner in;
- 
-    public static void main(String[] args) {
-        in = new Scanner(System.in);
-
-        doStuff();
-    }
-
-    public static void doStuff() {
-        int N = in.nextInt();
-
-        for(int i = 0;i < N; i++) {
-            solve();
-        }
-    }
-
-    public static void solve() {
-      int r = in.nextInt();
-
-    }
-}
-\end{verbatim}
 \end{document}
