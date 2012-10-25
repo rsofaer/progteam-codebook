@@ -1,0 +1,6 @@
+*.class
+*.toc
+*.aux
+codebook.pdf
+*.log
+.DS_Store
